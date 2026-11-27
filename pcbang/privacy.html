@@ -1,93 +1,337 @@
-# 개인정보 처리방침
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 - 만렙 피시방</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --text: #1f2430;
+    --muted: #667085;
+    --line: #e4e7ec;
+    --accent: #3b6df0;
+    --accent-soft: #eef3ff;
+    --th: #f2f4f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161b;
+      --card: #1c1f26;
+      --text: #e8eaee;
+      --muted: #9aa3b2;
+      --line: #2c313b;
+      --accent: #7d9cff;
+      --accent-soft: #232a3d;
+      --th: #242833;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Segoe UI", sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+  header.top {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px 28px 24px;
+    margin-bottom: 16px;
+  }
+  header.top h1 { margin: 0 0 14px; font-size: 1.7rem; letter-spacing: -0.02em; }
+  .meta { display: grid; grid-template-columns: 90px 1fr; gap: 4px 12px; margin: 0 0 16px; font-size: 0.93rem; }
+  .meta dt { color: var(--muted); }
+  .meta dd { margin: 0; }
+  .intro { margin: 0; color: var(--text); }
+  nav.toc {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px 28px;
+    margin-bottom: 16px;
+  }
+  nav.toc strong { display: block; margin-bottom: 8px; font-size: 0.95rem; }
+  nav.toc ol { margin: 0; padding-left: 1.3em; columns: 2; column-gap: 28px; font-size: 0.93rem; }
+  nav.toc li { break-inside: avoid; }
+  nav.toc a { color: var(--accent); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    scroll-margin-top: 16px;
+  }
+  section h2 {
+    margin: 0 0 14px;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  section h2 .no {
+    flex: none;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 8px;
+    border-radius: 8px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  p { margin: 0 0 12px; }
+  p:last-child { margin-bottom: 0; }
+  ul, ol { margin: 0 0 12px; padding-left: 1.4em; }
+  li { margin-bottom: 4px; }
+  a { color: var(--accent); }
+  .table-wrap { overflow-x: auto; margin: 4px 0 14px; border: 1px solid var(--line); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 520px; }
+  table.wide { min-width: 860px; }
+  th, td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  th { background: var(--th); font-weight: 600; white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  .note {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 0 0 12px;
+    font-size: 0.95rem;
+  }
+  .contact {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  .contact p { margin: 0; }
+  .agency { list-style: none; padding: 0; margin: 0; }
+  .agency li { padding: 8px 0; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 2px 12px; }
+  .agency li:last-child { border-bottom: 0; }
+  .agency .name { font-weight: 600; min-width: 220px; }
+  .agency .info { color: var(--muted); }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 24px; }
+  @media (max-width: 600px) {
+    .wrap { padding: 16px 10px 48px; }
+    header.top, nav.toc, section { padding: 18px 16px; border-radius: 12px; }
+    header.top h1 { font-size: 1.45rem; }
+    nav.toc ol { columns: 1; }
+    .meta { grid-template-columns: 72px 1fr; }
+    .agency .name { min-width: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
 
-**시행일자**: 2026년 11월 27일
-**앱 이름**: 만렙 피시방 (패키지명 com.dudqn.pcbang)
-**개발자**: 윤씨네코드 (개인 개발자)
+  <header class="top">
+    <h1>개인정보 처리방침</h1>
+    <dl class="meta">
+      <dt>시행일자</dt><dd>2026년 11월 27일</dd>
+      <dt>앱 이름</dt><dd>만렙 피시방 (패키지명 com.dudqn.pcbang)</dd>
+      <dt>개발자</dt><dd>만렙 피시방 개발자 (개인 개발자)</dd>
+    </dl>
+    <p class="intro">만렙 피시방(이하 "앱")은 이용자의 개인정보를 소중히 여기며 「개인정보 보호법」 등 관련 법령을 지킵니다. 이 방침은 앱이 어떤 정보를 왜 수집하고 어떻게 보호하는지 알려 드립니다.</p>
+  </header>
 
-만렙 피시방(이하 "앱")은 이용자의 개인정보를 소중히 여기며 「개인정보 보호법」 등 관련 법령을 지킵니다. 이 방침은 앱이 어떤 정보를 왜 수집하고 어떻게 보호하는지 알려 드립니다.
+  <nav class="toc" aria-label="목차">
+    <strong>목차</strong>
+    <ol>
+      <li><a href="#s1">수집하는 개인정보와 수집 방법</a></li>
+      <li><a href="#s2">이용 목적</a></li>
+      <li><a href="#s3">보유 기간과 파기</a></li>
+      <li><a href="#s4">처리 위탁과 국외 이전</a></li>
+      <li><a href="#s5">자동 수집 장치와 거부 방법</a></li>
+      <li><a href="#s6">개인정보의 안전성 확보 조치</a></li>
+      <li><a href="#s7">이용자의 권리</a></li>
+      <li><a href="#s8">아동의 개인정보</a></li>
+      <li><a href="#s9">개인정보 보호책임자와 문의</a></li>
+      <li><a href="#s10">방침의 변경</a></li>
+    </ol>
+  </nav>
 
-## 1. 수집하는 개인정보와 수집 방법
+  <section id="s1">
+    <h2><span class="no">1</span>수집하는 개인정보와 수집 방법</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>이용 상황</th><th>수집 항목</th><th>수집 방법</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>게스트로 이용</td>
+            <td>없음 (게임 진행은 이 기기 안에만 저장되고 서버로 보내지 않습니다)</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Google 로그인·회원가입</td>
+            <td>Google 계정 고유 식별자(UID), 이메일 주소, Google 프로필 이름·사진 주소, 이용자가 정한 닉네임, 개인정보 처리방침 동의 일시, 가입 일시</td>
+            <td>Google 로그인 시 Firebase 인증을 통해 자동 수집, 닉네임은 이용자가 직접 입력</td>
+          </tr>
+          <tr>
+            <td>로그인 상태로 게임</td>
+            <td>게임 진행 정보 (스테이지, 게임 내 재화, 업그레이드 단계, 브랜드 별, 스토리 진행, 저장 시각)</td>
+            <td>게임 중 자동 저장</td>
+          </tr>
+          <tr>
+            <td>보상형 광고 시청</td>
+            <td>광고 식별자(광고 ID), IP 주소, 기기 모델·운영체제 정보, 광고 노출·시청 기록</td>
+            <td>Google AdMob이 자동 수집</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">앱은 이름, 전화번호, 주소, 결제 정보, 위치 정보, 연락처, 사진 등 그 밖의 개인정보를 수집하지 않습니다. 앱에는 유료 결제가 없습니다.</p>
+  </section>
 
-| 이용 상황 | 수집 항목 | 수집 방법 |
-|---|---|---|
-| 게스트로 이용 | 없음 (게임 진행은 이 기기 안에만 저장되고 서버로 보내지 않습니다) | - |
-| Google 로그인·회원가입 | Google 계정 고유 식별자(UID), 이메일 주소, Google 프로필 이름·사진 주소, 이용자가 정한 닉네임, 개인정보 처리방침 동의 일시, 가입 일시 | Google 로그인 시 Firebase 인증을 통해 자동 수집, 닉네임은 이용자가 직접 입력 |
-| 로그인 상태로 게임 | 게임 진행 정보 (스테이지, 게임 내 재화, 업그레이드 단계, 브랜드 별, 스토리 진행, 저장 시각) | 게임 중 자동 저장 |
-| 보상형 광고 시청 | 광고 식별자(광고 ID), IP 주소, 기기 모델·운영체제 정보, 광고 노출·시청 기록 | Google AdMob 이 자동 수집 |
+  <section id="s2">
+    <h2><span class="no">2</span>이용 목적</h2>
+    <ol>
+      <li>회원 식별, 로그인 유지, 중복 가입 방지</li>
+      <li>게임 진행의 서버 저장과 기기 변경 시 복구</li>
+      <li>보상형 광고 제공과 시청 완료 확인 (광고를 끝까지 본 경우에만 게임 내 보상 지급)</li>
+      <li>앱 업데이트 안내</li>
+    </ol>
+  </section>
 
-앱은 이름, 전화번호, 주소, 결제 정보, 위치 정보, 연락처, 사진 등 그 밖의 개인정보를 수집하지 않습니다. 앱에는 유료 결제가 없습니다.
+  <section id="s3">
+    <h2><span class="no">3</span>보유 기간과 파기</h2>
+    <ol>
+      <li>회원 정보와 게임 진행 정보는 <strong>회원 탈퇴 시 지체 없이</strong> 삭제합니다.</li>
+      <li>탈퇴 방법: 앱 실행 &gt; 로비 &gt; 설정 &gt; 회원 탈퇴 (본인 확인을 위해 Google 로그인을 한 번 더 합니다)</li>
+      <li>기기에 저장된 게임 진행은 로그아웃하거나 앱을 삭제하면 지워집니다.</li>
+      <li>파기 방법: 서버의 전자 데이터는 복구할 수 없는 방법으로 삭제합니다.</li>
+      <li>광고 관련 정보는 Google의 보유 정책에 따릅니다.</li>
+    </ol>
+  </section>
 
-## 2. 이용 목적
+  <section id="s4">
+    <h2><span class="no">4</span>처리 위탁과 국외 이전</h2>
+    <p>앱은 서비스 제공을 위해 아래와 같이 개인정보 처리를 맡기고 있으며, 이 과정에서 정보가 국외로 이전될 수 있습니다.</p>
+    <div class="table-wrap">
+      <table class="wide">
+        <thead>
+          <tr><th>받는 자</th><th>맡기는 업무</th><th>이전 항목</th><th>이전 국가</th><th>이전 시기·방법</th><th>보유 기간</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google LLC<br>(Firebase Authentication)</td>
+            <td>로그인·회원 인증</td>
+            <td>UID, 이메일, 프로필 이름·사진 주소</td>
+            <td>미국 등 Google 데이터센터 소재국</td>
+            <td>로그인할 때 네트워크로 전송</td>
+            <td>회원 탈퇴 시까지</td>
+          </tr>
+          <tr>
+            <td>Google LLC<br>(Cloud Firestore)</td>
+            <td>닉네임·게임 진행 보관</td>
+            <td>UID, 닉네임, 동의·가입 일시, 게임 진행 정보</td>
+            <td>대한민국 (서울 리전)</td>
+            <td>가입·저장할 때 네트워크로 전송</td>
+            <td>회원 탈퇴 시까지</td>
+          </tr>
+          <tr>
+            <td>Google LLC<br>(AdMob)</td>
+            <td>보상형 광고 제공</td>
+            <td>광고 ID, IP 주소, 기기 정보, 광고 이용 기록</td>
+            <td>미국 등 Google 데이터센터 소재국</td>
+            <td>광고를 볼 때 네트워크로 전송</td>
+            <td>Google 정책에 따름</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>Google 개인정보처리방침: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
+      <li>Google 광고 관련 정책: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">https://policies.google.com/technologies/ads</a></li>
+    </ul>
+    <p>국외 이전을 원하지 않으면 Google 로그인 없이 게스트로 이용하고, 광고 보상을 이용하지 않으시면 됩니다. 앱은 위 경우 말고는 개인정보를 제3자에게 팔거나 제공하지 않습니다.</p>
+  </section>
 
-1. 회원 식별, 로그인 유지, 중복 가입 방지
-2. 게임 진행의 서버 저장과 기기 변경 시 복구
-3. 보상형 광고 제공과 시청 완료 확인 (광고를 끝까지 본 경우에만 게임 내 보상 지급)
-4. 앱 업데이트 안내
+  <section id="s5">
+    <h2><span class="no">5</span>자동 수집 장치와 거부 방법</h2>
+    <ul>
+      <li>앱은 웹 쿠키를 쓰지 않습니다.</li>
+      <li>보상형 광고를 위해 기기의 광고 식별자가 사용될 수 있습니다. 기기 <strong>설정 &gt; Google &gt; 광고</strong> (또는 설정 &gt; 개인정보 보호 &gt; 광고)에서 광고 ID를 재설정하거나 삭제할 수 있습니다.</li>
+      <li>앱은 맞춤형 광고를 위해 이용자를 따로 분류하거나 추적하지 않습니다.</li>
+    </ul>
+  </section>
 
-## 3. 보유 기간과 파기
+  <section id="s6">
+    <h2><span class="no">6</span>개인정보의 안전성 확보 조치</h2>
+    <ol>
+      <li>모든 서버 통신은 암호화(HTTPS/TLS)됩니다.</li>
+      <li>서버 보안 규칙으로 <strong>본인 계정의 정보만</strong> 읽고 쓸 수 있게 제한합니다.</li>
+      <li>개발자 외에는 서버 관리 화면에 접근할 수 없습니다.</li>
+    </ol>
+  </section>
 
-1. 회원 정보와 게임 진행 정보는 **회원 탈퇴 시 지체 없이** 삭제합니다.
-2. 탈퇴 방법: 앱 실행 > 로비 > 설정 > 회원 탈퇴 (본인 확인을 위해 Google 로그인을 한 번 더 합니다)
-3. 기기에 저장된 게임 진행은 로그아웃하거나 앱을 삭제하면 지워집니다.
-4. 파기 방법: 서버의 전자 데이터는 복구할 수 없는 방법으로 삭제합니다.
-5. 광고 관련 정보는 Google 의 보유 정책에 따릅니다.
+  <section id="s7">
+    <h2><span class="no">7</span>이용자의 권리</h2>
+    <p>이용자는 언제든지 다음을 요청할 수 있습니다.</p>
+    <ol>
+      <li>내 개인정보 열람·정정 (닉네임은 설정 화면에서 확인)</li>
+      <li>삭제 및 처리 정지: 앱의 설정 &gt; 회원 탈퇴, 또는 아래 문의처로 요청</li>
+      <li>동의 철회: 회원 탈퇴로 철회할 수 있습니다.</li>
+    </ol>
+    <p>요청을 받으면 지체 없이 처리하고 결과를 알려 드립니다.</p>
+  </section>
 
-## 4. 처리 위탁과 국외 이전
+  <section id="s8">
+    <h2><span class="no">8</span>아동의 개인정보</h2>
+    <p>앱은 만 14세 미만 아동의 개인정보를 알면서 수집하지 않습니다. 만 14세 미만은 Google 로그인 없이 게스트로 이용해 주세요. 만 14세 미만 아동의 정보가 수집된 사실을 알게 되면 즉시 삭제합니다.</p>
+  </section>
 
-앱은 서비스 제공을 위해 아래와 같이 개인정보 처리를 맡기고 있으며, 이 과정에서 정보가 국외로 이전될 수 있습니다.
+  <section id="s9">
+    <h2><span class="no">9</span>개인정보 보호책임자와 문의</h2>
+    <div class="contact">
+      <p><strong>개인정보 보호책임자</strong>: 윤씨네코드</p>
+      <p><strong>이메일</strong>: <a href="mailto:dudqn1660@gmail.com">dudqn1660@gmail.com</a></p>
+    </div>
+    <p>개인정보 침해에 대한 신고나 상담이 필요하면 아래 기관에 문의할 수 있습니다.</p>
+    <ul class="agency">
+      <li>
+        <span class="name">개인정보침해 신고센터 (한국인터넷진흥원)</span>
+        <span class="info"><a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a> / 국번 없이 118</span>
+      </li>
+      <li>
+        <span class="name">개인정보 분쟁조정위원회</span>
+        <span class="info"><a href="https://www.kopico.go.kr" target="_blank" rel="noopener">www.kopico.go.kr</a> / 1833-6972</span>
+      </li>
+      <li>
+        <span class="name">대검찰청 사이버수사과</span>
+        <span class="info"><a href="https://www.spo.go.kr" target="_blank" rel="noopener">www.spo.go.kr</a> / 국번 없이 1301</span>
+      </li>
+      <li>
+        <span class="name">경찰청 사이버수사국</span>
+        <span class="info"><a href="https://ecrm.police.go.kr" target="_blank" rel="noopener">ecrm.police.go.kr</a> / 국번 없이 182</span>
+      </li>
+    </ul>
+  </section>
 
-| 받는 자 | 맡기는 업무 | 이전 항목 | 이전 국가 | 이전 시기·방법 | 보유 기간 |
-|---|---|---|---|---|---|
-| Google LLC (Firebase Authentication) | 로그인·회원 인증 | UID, 이메일, 프로필 이름·사진 주소 | 미국 등 Google 데이터센터 소재국 | 로그인할 때 네트워크로 전송 | 회원 탈퇴 시까지 |
-| Google LLC (Cloud Firestore) | 닉네임·게임 진행 보관 | UID, 닉네임, 동의·가입 일시, 게임 진행 정보 | 대한민국(서울 리전) | 가입·저장할 때 네트워크로 전송 | 회원 탈퇴 시까지 |
-| Google LLC (AdMob) | 보상형 광고 제공 | 광고 ID, IP 주소, 기기 정보, 광고 이용 기록 | 미국 등 Google 데이터센터 소재국 | 광고를 볼 때 네트워크로 전송 | Google 정책에 따름 |
+  <section id="s10">
+    <h2><span class="no">10</span>방침의 변경</h2>
+    <p>이 방침이 바뀌면 시행 7일 전부터 앱 업데이트 내용 또는 앱 안의 안내로 알려 드립니다.</p>
+    <ul>
+      <li>공고일자: 2026년 11월 27일</li>
+      <li>시행일자: 2026년 11월 27일</li>
+    </ul>
+  </section>
 
-- Google 개인정보처리방침: https://policies.google.com/privacy
-- Google 광고 관련 정책: https://policies.google.com/technologies/ads
-
-국외 이전을 원하지 않으면 Google 로그인 없이 게스트로 이용하고, 광고 보상을 이용하지 않으시면 됩니다. 앱은 위 경우 말고는 개인정보를 제3자에게 팔거나 제공하지 않습니다.
-
-## 5. 자동 수집 장치와 거부 방법
-
-- 앱은 웹 쿠키를 쓰지 않습니다.
-- 보상형 광고를 위해 기기의 광고 식별자가 사용될 수 있습니다. 기기 **설정 > Google > 광고** (또는 설정 > 개인정보 보호 > 광고)에서 광고 ID를 재설정하거나 삭제할 수 있습니다.
-- 앱은 맞춤형 광고를 위해 이용자를 따로 분류하거나 추적하지 않습니다.
-
-## 6. 개인정보의 안전성 확보 조치
-
-1. 모든 서버 통신은 암호화(HTTPS/TLS)됩니다.
-2. 서버 보안 규칙으로 **본인 계정의 정보만** 읽고 쓸 수 있게 제한합니다.
-3. 개발자 외에는 서버 관리 화면에 접근할 수 없습니다.
-
-## 7. 이용자의 권리
-
-이용자는 언제든지 다음을 요청할 수 있습니다.
-
-1. 내 개인정보 열람·정정 (닉네임은 설정 화면에서 확인)
-2. 삭제 및 처리 정지: 앱의 설정 > 회원 탈퇴, 또는 아래 문의처로 요청
-3. 동의 철회: 회원 탈퇴로 철회할 수 있습니다.
-
-요청을 받으면 지체 없이 처리하고 결과를 알려 드립니다.
-
-## 8. 아동의 개인정보
-
-앱은 만 14세 미만 아동의 개인정보를 알면서 수집하지 않습니다. 만 14세 미만은 Google 로그인 없이 게스트로 이용해 주세요. 만 14세 미만 아동의 정보가 수집된 사실을 알게 되면 즉시 삭제합니다.
-
-## 9. 개인정보 보호책임자와 문의
-
-- 개인정보 보호책임자: 윤씨네코드
-- 이메일: dudqn1660@gmail.com
-
-개인정보 침해에 대한 신고나 상담이 필요하면 아래 기관에 문의할 수 있습니다.
-
-- 개인정보침해 신고센터 (한국인터넷진흥원): privacy.kisa.or.kr / 국번 없이 118
-- 개인정보 분쟁조정위원회: www.kopico.go.kr / 1833-6972
-- 대검찰청 사이버수사과: www.spo.go.kr / 국번 없이 1301
-- 경찰청 사이버수사국: ecrm.police.go.kr / 국번 없이 182
-
-## 10. 방침의 변경
-
-이 방침이 바뀌면 시행 7일 전부터 앱 업데이트 내용 또는 앱 안의 안내로 알려 드립니다.
-
-- 공고일자: 2026년 11월 27일
-- 시행일자: 2026년 11월 27일
+  <footer>© 만렙 피시방 · 개인정보 처리방침</footer>
+</div>
+</body>
+</html>

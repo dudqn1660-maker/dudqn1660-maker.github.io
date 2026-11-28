@@ -3,311 +3,249 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>개인정보처리방침 - 우리 아파트 좀비 났다</title>
+<title>신병 키우기 - 개인정보 처리방침</title>
 <style>
   :root {
-    --bg: #f6f7f9;
+    --bg: #f6f7f3;
     --card: #ffffff;
-    --text: #1f2430;
-    --muted: #667085;
-    --line: #e4e7ec;
-    --accent: #3b6df0;
-    --accent-soft: #eef3ff;
-    --th: #f2f4f7;
-    --warn-bg: #fff6e5;
-    --warn-line: #f5d9a3;
+    --text: #1f2a1f;
+    --muted: #5b665b;
+    --accent: #3f6b2f;
+    --line: #dde3d8;
+    --th: #eef3ea;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #14161b;
-      --card: #1c1f26;
-      --text: #e8eaee;
-      --muted: #9aa3b2;
-      --line: #2c313b;
-      --accent: #7d9cff;
-      --accent-soft: #232a3d;
-      --th: #242833;
-      --warn-bg: #2d2617;
-      --warn-line: #5a4a24;
+      --bg: #141a14;
+      --card: #1c241c;
+      --text: #e6ece4;
+      --muted: #a3b0a1;
+      --accent: #8fc27a;
+      --line: #2f3b2f;
+      --th: #243024;
     }
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    font-size: 15px;
     line-height: 1.75;
-    font-size: 16px;
     word-break: keep-all;
-    overflow-wrap: anywhere;
   }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
-  header.top {
+  main {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+  header { margin-bottom: 28px; }
+  h1 { font-size: 1.6rem; margin: 0 0 6px; color: var(--accent); }
+  .meta { color: var(--muted); font-size: 0.9rem; }
+  .intro, section {
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 28px 28px 24px;
+    border-radius: 12px;
+    padding: 20px 22px;
     margin-bottom: 16px;
   }
-  header.top h1 { margin: 0 0 14px; font-size: 1.7rem; letter-spacing: -0.02em; }
-  .meta { display: grid; grid-template-columns: 90px 1fr; gap: 4px 12px; margin: 0 0 16px; font-size: 0.93rem; }
-  .meta dt { color: var(--muted); }
-  .meta dd { margin: 0; }
-  .intro { margin: 0; }
-  nav.toc {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 18px 28px;
-    margin-bottom: 16px;
-  }
-  nav.toc strong { display: block; margin-bottom: 8px; font-size: 0.95rem; }
-  nav.toc ol { margin: 0; padding-left: 1.3em; columns: 2; column-gap: 28px; font-size: 0.93rem; }
-  nav.toc li { break-inside: avoid; }
-  nav.toc a { color: var(--accent); text-decoration: none; }
-  nav.toc a:hover { text-decoration: underline; }
-  section {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 24px 28px;
-    margin-bottom: 16px;
-    scroll-margin-top: 16px;
-  }
-  section h2 {
-    margin: 0 0 14px;
-    font-size: 1.2rem;
-    letter-spacing: -0.01em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  section h2 .no {
-    flex: none;
-    min-width: 28px;
-    height: 28px;
-    padding: 0 8px;
-    border-radius: 8px;
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  h3 { margin: 18px 0 8px; font-size: 1.02rem; }
-  p { margin: 0 0 12px; }
-  p:last-child { margin-bottom: 0; }
-  ul, ol { margin: 0 0 12px; padding-left: 1.4em; }
-  li { margin-bottom: 4px; }
+  h2 { font-size: 1.1rem; margin: 0 0 10px; }
+  h3 { font-size: 1rem; margin: 16px 0 6px; }
+  p { margin: 6px 0; }
+  ul, ol { margin: 6px 0; padding-left: 22px; }
+  li { margin: 3px 0; }
+  .table-wrap { overflow-x: auto; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 520px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--th); font-weight: 600; }
   a { color: var(--accent); }
-  .table-wrap { overflow-x: auto; margin: 4px 0 14px; border: 1px solid var(--line); border-radius: 10px; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 520px; }
-  th, td { padding: 10px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
-  th { background: var(--th); font-weight: 600; white-space: nowrap; }
-  tr:last-child td { border-bottom: 0; }
-  .note {
-    background: var(--accent-soft);
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin: 0 0 12px;
-    font-size: 0.95rem;
-  }
-  .steps { counter-reset: step; list-style: none; padding: 0; margin: 0 0 12px; }
-  .steps li {
-    counter-increment: step;
-    position: relative;
-    padding: 10px 12px 10px 48px;
-    margin-bottom: 8px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-  }
-  .steps li::before {
-    content: counter(step);
-    position: absolute;
-    left: 12px;
-    top: 10px;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
-    font-size: 0.85rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .warn {
-    background: var(--warn-bg);
-    border: 1px solid var(--warn-line);
-    border-radius: 10px;
-    padding: 12px 14px;
-    margin: 0 0 12px;
-    font-size: 0.95rem;
-  }
-  .contact {
-    background: var(--accent-soft);
-    border-radius: 10px;
-    padding: 14px 16px;
-  }
-  .contact p { margin: 0; }
-  footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 24px; }
-  @media (max-width: 600px) {
-    .wrap { padding: 16px 10px 48px; }
-    header.top, nav.toc, section { padding: 18px 16px; border-radius: 12px; }
-    header.top h1 { font-size: 1.45rem; }
-    nav.toc ol { columns: 1; }
-    .meta { grid-template-columns: 72px 1fr; }
-  }
+  nav ol { columns: 2; column-gap: 24px; }
+  @media (max-width: 560px) { nav ol { columns: 1; } }
+  .note { color: var(--muted); font-size: 0.9rem; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 28px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-
-  <header class="top">
-    <h1>개인정보처리방침</h1>
-    <dl class="meta">
-      <dt>게임 이름</dt><dd>우리 아파트 좀비 났다</dd>
-      <dt>개발자</dt><dd>윤씨네코드</dd>
-      <dt>시행일</dt><dd>2026년 12월 1일</dd>
-    </dl>
-    <p class="intro"><strong>우리 아파트 좀비 났다</strong>(이하 "게임")의 개발자 윤씨네코드(이하 "개발자")는 이용자의 개인정보를 소중히 다루며, 다음과 같이 처리합니다.</p>
+<main>
+  <header>
+    <h1>개인정보 처리방침</h1>
+    <div class="meta">신병 키우기 (com.dudqn.army) · 시행일: 2026년 11월 28일</div>
   </header>
 
-  <nav class="toc" aria-label="목차">
-    <strong>목차</strong>
+  <div class="intro">
+    <p>「신병 키우기」(이하 “앱”)의 개발자(이하 “개발자”)는 「개인정보 보호법」 등 관련 법령을 준수하며, 이용자의 개인정보를 소중히 다룹니다. 이 방침은 앱이 어떤 개인정보를 왜 수집하고, 어떻게 이용·보관·파기하는지 안내합니다.</p>
+  </div>
+
+  <nav class="intro">
+    <h2>목차</h2>
     <ol>
-      <li><a href="#s1">수집하는 정보와 목적</a></li>
-      <li><a href="#s2">정보를 처리하는 외부 서비스</a></li>
-      <li><a href="#s3">맞춤 광고 설정</a></li>
-      <li><a href="#delete">계정 삭제 요청 (데이터 삭제)</a></li>
-      <li><a href="#s5">아동의 개인정보</a></li>
-      <li><a href="#s6">이용자의 권리</a></li>
-      <li><a href="#s7">안전성 확보 조치</a></li>
-      <li><a href="#s8">개인정보 보호책임자 및 문의</a></li>
-      <li><a href="#s9">방침의 변경</a></li>
+      <li><a href="#s1">수집하는 개인정보 항목</a></li>
+      <li><a href="#s2">개인정보의 수집·이용 목적</a></li>
+      <li><a href="#s3">보유 및 이용 기간</a></li>
+      <li><a href="#s4">다른 이용자에게 공개되는 정보</a></li>
+      <li><a href="#s5">제3자 제공</a></li>
+      <li><a href="#s6">처리 위탁 및 국외 이전</a></li>
+      <li><a href="#s7">광고 및 광고 식별자</a></li>
+      <li><a href="#s8">개인정보의 파기 (회원 탈퇴)</a></li>
+      <li><a href="#s9">이용자의 권리와 행사 방법</a></li>
+      <li><a href="#s10">아동의 개인정보</a></li>
+      <li><a href="#s11">안전성 확보 조치</a></li>
+      <li><a href="#s12">개인정보 보호책임자</a></li>
+      <li><a href="#s13">권익침해 구제 방법</a></li>
+      <li><a href="#s14">방침의 변경</a></li>
     </ol>
   </nav>
 
   <section id="s1">
-    <h2><span class="no">1</span>수집하는 정보와 목적</h2>
+    <h2>1. 수집하는 개인정보 항목</h2>
+    <h3>가. 이용자가 직접 제공하는 정보</h3>
     <div class="table-wrap">
       <table>
-        <thead>
-          <tr><th>구분</th><th>수집 항목</th><th>목적</th><th>보관 기간</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>구글 계정으로 로그인한 경우</td>
-            <td>이메일 주소, 구글 계정 고유 ID (Firebase 사용자 ID)</td>
-            <td>로그인, 계정 확인</td>
-            <td>회원 탈퇴 시까지</td>
-          </tr>
-          <tr>
-            <td>구글 계정으로 로그인한 경우</td>
-            <td>닉네임, 게임 진행도 (스테이지, 재화, 보유 아이템 등)</td>
-            <td>클라우드 저장과 기기 변경 시 진행도 복원</td>
-            <td>회원 탈퇴 시까지</td>
-          </tr>
-          <tr>
-            <td>모든 이용자</td>
-            <td>광고 ID, 기기 정보, IP 주소 기반의 대략적인 위치, 광고 이용 기록</td>
-            <td>보상형 광고 제공, 광고 성과 측정, 부정 이용 방지</td>
-            <td>광고 제공사 정책에 따름</td>
-          </tr>
-        </tbody>
+        <tr><th>구분</th><th>수집 항목</th></tr>
+        <tr><td>이메일 회원가입·로그인</td><td>이메일 주소, 비밀번호<br><span class="note">※ 비밀번호는 Firebase Authentication에서 암호화되어 관리되며, 개발자는 이를 열람할 수 없습니다.</span></td></tr>
+        <tr><td>구글 계정 로그인</td><td>구글 계정 이메일 주소, 구글 계정 식별 정보(인증 토큰)</td></tr>
+        <tr><td>게임 프로필 설정</td><td>닉네임</td></tr>
       </table>
     </div>
+    <h3>나. 서비스 이용 과정에서 생성·수집되는 정보</h3>
     <ul>
-      <li>게스트로 이용하면 게임 진행도는 기기 안에만 저장되며 개발자에게 전송되지 않습니다.</li>
-      <li>게임에는 채팅, 위치 공유, 결제 기능이 없습니다.</li>
+      <li>회원 고유 식별자(UID), 앱 내 자동 발급 번호(군번), 가입 일시</li>
+      <li>게임 진행 데이터: 보유 재화·아이템, 전투력, 누적 금액, 환생 횟수, 소속 부대, 출석·미션 기록 등</li>
+      <li>기기 및 이용 정보: 기기 모델, 운영체제 버전, 앱 버전, 앱 이용 기록(화면 방문, 이벤트), IP 주소</li>
+      <li>광고 식별자(Android 광고 ID)</li>
     </ul>
+    <p class="note">앱은 이름, 전화번호, 주소, 위치 정보, 연락처, 사진 등은 수집하지 않으며, 앱 내 유료 결제 기능이 없어 결제 정보도 수집하지 않습니다.</p>
   </section>
 
   <section id="s2">
-    <h2><span class="no">2</span>정보를 처리하는 외부 서비스</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>제공사</th><th>서비스</th><th>처리하는 정보</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Google LLC</td>
-            <td>Firebase Authentication, Cloud Firestore</td>
-            <td>로그인 정보, 닉네임, 게임 진행도</td>
-          </tr>
-          <tr>
-            <td>Google LLC</td>
-            <td>Google AdMob</td>
-            <td>광고 ID, 기기 정보, 대략적인 위치</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <h2>2. 개인정보의 수집·이용 목적</h2>
     <ul>
-      <li>Google 개인정보처리방침: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
-      <li>정보는 Google의 서버(국외 포함)에 저장될 수 있습니다.</li>
-      <li>개발자는 위 목적 외에 이용자의 정보를 판매하거나 제3자에게 제공하지 않습니다.</li>
+      <li><strong>회원 관리:</strong> 회원 가입 및 로그인, 본인 식별, 부정 이용 방지, 회원 탈퇴 처리</li>
+      <li><strong>게임 서비스 제공:</strong> 게임 데이터 저장 및 기기 간 동기화, 랭킹·명예의 전당·부대 기록·부대전 등 이용자 간 기능 제공</li>
+      <li><strong>서비스 개선:</strong> 이용 통계 분석, 오류 확인, 앱 업데이트 안내</li>
+      <li><strong>광고:</strong> 보상형·앱 시작 광고 노출 및 광고 보상 지급</li>
     </ul>
   </section>
 
   <section id="s3">
-    <h2><span class="no">3</span>맞춤 광고 설정</h2>
-    <p>이용자는 기기의 <strong>설정 &gt; Google &gt; 광고</strong>에서 광고 ID를 재설정하거나 삭제해 맞춤 광고를 끌 수 있습니다.</p>
-  </section>
-
-  <section id="delete">
-    <h2><span class="no">4</span>계정 삭제 요청 (데이터 삭제)</h2>
-
-    <h3>게임 안에서 삭제하기</h3>
-    <ol class="steps">
-      <li>로비 오른쪽 위 톱니바퀴(설정)를 누릅니다.</li>
-      <li><strong>회원 탈퇴</strong>를 누르고, 본인 확인을 위해 구글 계정을 한 번 더 선택합니다.</li>
-      <li>계정과 클라우드에 저장된 닉네임, 게임 진행도가 바로 삭제되며 되돌릴 수 없습니다.</li>
-    </ol>
-
-    <h3>게임을 지웠거나 실행할 수 없는 경우</h3>
-    <div class="warn">
-      <a href="mailto:dudqn9258@naver.com?subject=계정%20삭제%20요청">dudqn9258@naver.com</a> 으로 <strong>"계정 삭제 요청"</strong> 제목과 함께 로그인에 쓴 구글 이메일 주소를 보내 주세요. 확인 후 7일 안에 계정과 모든 게임 데이터를 삭제하고 회신합니다.
-    </div>
+    <h2>3. 보유 및 이용 기간</h2>
+    <p>개인정보는 <strong>회원 탈퇴 시까지</strong> 보유·이용하며, 탈퇴 시 지체 없이 파기합니다. 단, 다음의 경우는 예외로 합니다.</p>
     <ul>
-      <li>광고 제공사(AdMob)가 처리한 정보는 Google 정책에 따라 처리되며, 위 3번 방법으로 광고 ID를 삭제할 수 있습니다.</li>
+      <li>관련 법령에 따라 보존이 필요한 경우: 해당 법령에서 정한 기간 동안 보관</li>
+      <li>Firebase Analytics 및 Google AdMob이 수집한 정보: 각 서비스 제공자(Google)의 보존 정책에 따름</li>
     </ul>
   </section>
 
+  <section id="s4">
+    <h2>4. 다른 이용자에게 공개되는 정보</h2>
+    <p>랭킹, 명예의 전당, 부대 기록, 부대전 등 기능을 위해 다음 정보가 다른 이용자에게 표시될 수 있습니다.</p>
+    <ul>
+      <li>닉네임, 군번(앱 내 발급 번호), 전투력, 누적 금액, 환생 횟수, 소속 부대 등 게임 기록</li>
+    </ul>
+    <p class="note">이메일 주소는 다른 이용자에게 공개되지 않습니다. 닉네임에 실명 등 개인을 식별할 수 있는 정보를 사용하지 않도록 유의해 주세요.</p>
+  </section>
+
   <section id="s5">
-    <h2><span class="no">5</span>아동의 개인정보</h2>
-    <p>게임은 만 13세 이상을 대상으로 합니다. 만 14세 미만 아동의 정보가 법정대리인 동의 없이 수집된 것을 알게 되면 즉시 삭제합니다.</p>
+    <h2>5. 제3자 제공</h2>
+    <p>개발자는 이용자의 개인정보를 제3자에게 제공하지 않습니다. 다만, 이용자가 사전에 동의한 경우 또는 법령에 따라 수사기관 등의 적법한 요청이 있는 경우는 예외로 합니다.</p>
   </section>
 
   <section id="s6">
-    <h2><span class="no">6</span>이용자의 권리</h2>
-    <p>이용자는 언제든지 자신의 정보에 대한 열람, 정정, 삭제, 처리 정지를 요청할 수 있으며, 아래 문의 이메일로 요청하면 지체 없이 처리합니다.</p>
+    <h2>6. 처리 위탁 및 국외 이전</h2>
+    <p>원활한 서비스 제공을 위해 아래와 같이 개인정보 처리 업무를 위탁하고 있으며, 이 과정에서 개인정보가 국외 서버로 이전·보관됩니다.</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>수탁자 (이전받는 자)</th><th>위탁 업무</th><th>이전 항목</th><th>이전 국가 / 방법</th></tr>
+        <tr><td>Google LLC<br>(Firebase Authentication, Google 로그인)</td><td>회원 인증 및 계정 관리</td><td>이메일, 비밀번호(암호화), UID, 구글 계정 식별 정보</td><td rowspan="4">미국 등 Google 데이터센터 소재 국가 / 서비스 이용 시점에 네트워크를 통해 전송</td></tr>
+        <tr><td>Google LLC<br>(Cloud Firestore)</td><td>게임 데이터 저장</td><td>UID, 이메일, 닉네임, 군번, 가입 일시, 게임 진행 데이터</td></tr>
+        <tr><td>Google LLC<br>(Firebase Analytics)</td><td>이용 통계 분석</td><td>기기 정보, 앱 이용 기록, 광고 식별자, 앱 인스턴스 ID</td></tr>
+        <tr><td>Google LLC<br>(Google AdMob)</td><td>광고 제공</td><td>광고 식별자, 기기 정보, IP 주소, 광고 상호작용 정보</td></tr>
+      </table>
+    </div>
+    <p>보유 기간: 회원 탈퇴 또는 위탁 계약 종료 시까지 (Analytics·AdMob은 Google 정책에 따름)</p>
+    <p>국외 이전을 원하지 않는 경우 회원 탈퇴를 통해 거부할 수 있으나, 이 경우 서비스 이용이 불가능합니다.</p>
+    <p class="note">Google 개인정보처리방침: <a href="https://policies.google.com/privacy?hl=ko" target="_blank" rel="noopener">https://policies.google.com/privacy</a><br>
+    Firebase 개인정보 보호: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">https://firebase.google.com/support/privacy</a></p>
   </section>
 
   <section id="s7">
-    <h2><span class="no">7</span>안전성 확보 조치</h2>
-    <p>모든 정보는 암호화된 연결(HTTPS)로 전송되며, 클라우드 데이터는 본인 계정으로만 읽고 쓸 수 있도록 접근이 제한됩니다.</p>
+    <h2>7. 광고 및 광고 식별자</h2>
+    <p>앱은 Google AdMob을 통해 광고를 제공합니다. AdMob은 맞춤형 광고 제공 및 광고 성과 측정을 위해 광고 식별자 등 정보를 수집할 수 있습니다.</p>
+    <p>이용자는 다음 방법으로 맞춤형 광고를 거부하거나 광고 ID를 재설정·삭제할 수 있습니다.</p>
+    <ul>
+      <li>Android: <strong>설정 → 개인정보 보호 → 광고</strong> (또는 설정 → Google → 광고)에서 광고 ID 재설정 또는 삭제</li>
+    </ul>
+    <p class="note">자세한 내용: <a href="https://policies.google.com/technologies/ads?hl=ko" target="_blank" rel="noopener">Google 광고 정책</a></p>
   </section>
 
   <section id="s8">
-    <h2><span class="no">8</span>개인정보 보호책임자 및 문의</h2>
-    <div class="contact">
-      <p><strong>책임자</strong>: 윤씨네코드</p>
-      <p><strong>이메일</strong>: <a href="mailto:dudqn9258@naver.com">dudqn9258@naver.com</a></p>
-    </div>
+    <h2>8. 개인정보의 파기 (회원 탈퇴)</h2>
+    <h3>가. 탈퇴 방법</h3>
+    <p>앱 내 <strong>설정 화면의 「계정 영구 삭제」</strong> 메뉴를 통해 언제든지 직접 탈퇴할 수 있습니다. 앱을 이용할 수 없는 경우 아래 12항의 연락처로 삭제를 요청할 수 있습니다.</p>
+    <p class="note">※ 보안 정책상 마지막 로그인 후 시간이 오래 지난 경우 탈퇴가 거부될 수 있으며, 이 경우 다시 로그인한 뒤 시도해 주세요.</p>
+    <h3>나. 파기 절차 및 방법</h3>
+    <ul>
+      <li>탈퇴 시 서버(Cloud Firestore)에 저장된 회원 데이터와 인증 계정(Firebase Authentication)이 즉시 삭제되며, 기기에 저장된 게임 데이터도 초기화됩니다.</li>
+      <li>전자적 파일 형태의 정보는 복구할 수 없는 방법으로 삭제합니다.</li>
+      <li>삭제된 데이터는 복구할 수 없습니다.</li>
+    </ul>
   </section>
 
   <section id="s9">
-    <h2><span class="no">9</span>방침의 변경</h2>
-    <p>이 방침이 바뀌면 시행 7일 전부터 이 페이지에 알립니다.</p>
+    <h2>9. 이용자의 권리와 행사 방법</h2>
+    <p>이용자는 언제든지 다음 권리를 행사할 수 있습니다.</p>
+    <ul>
+      <li>개인정보 열람, 정정, 삭제, 처리 정지 요구</li>
+      <li>개인정보 수집·이용 동의 철회 (회원 탈퇴)</li>
+    </ul>
+    <p>닉네임 변경과 회원 탈퇴는 앱 내에서 직접 할 수 있으며, 그 밖의 요청은 12항의 연락처로 하시면 지체 없이 조치하겠습니다.</p>
   </section>
 
-  <footer>© 우리 아파트 좀비 났다 · 개인정보처리방침</footer>
-</div>
+  <section id="s10">
+    <h2>10. 아동의 개인정보</h2>
+    <p>앱은 만 14세 미만 아동을 대상으로 하지 않으며, 만 14세 미만 아동의 개인정보를 고의로 수집하지 않습니다. 만 14세 미만 아동이 법정대리인의 동의 없이 가입한 사실이 확인되면 해당 정보를 지체 없이 삭제합니다.</p>
+  </section>
+
+  <section id="s11">
+    <h2>11. 안전성 확보 조치</h2>
+    <ul>
+      <li>비밀번호 암호화 저장 (Firebase Authentication)</li>
+      <li>데이터 전송 구간 암호화 (HTTPS/TLS)</li>
+      <li>데이터베이스 보안 규칙을 통한 접근 권한 제한</li>
+      <li>개인정보에 접근할 수 있는 인원을 개발자로 최소화</li>
+    </ul>
+  </section>
+
+  <section id="s12">
+    <h2>12. 개인정보 보호책임자</h2>
+    <p>개인정보 처리에 관한 문의, 불만 처리, 피해 구제 등은 아래로 연락해 주시기 바랍니다.</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th style="width:30%">성명/직책</th><td>[윤씨네코드] / 개발자</td></tr>
+        <tr><th>이메일</th><td>[dudqn9258@naver.com]</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="s13">
+    <h2>13. 권익침해 구제 방법</h2>
+    <p>개인정보 침해에 대한 신고나 상담이 필요한 경우 아래 기관에 문의할 수 있습니다.</p>
+    <ul>
+      <li>개인정보침해신고센터: (국번없이) 118 · <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener">privacy.kisa.or.kr</a></li>
+      <li>개인정보분쟁조정위원회: 1833-6972 · <a href="https://www.kopico.go.kr" target="_blank" rel="noopener">www.kopico.go.kr</a></li>
+      <li>대검찰청 사이버수사과: (국번없이) 1301 · <a href="https://www.spo.go.kr" target="_blank" rel="noopener">www.spo.go.kr</a></li>
+      <li>경찰청 사이버수사국: (국번없이) 182 · <a href="https://ecrm.police.go.kr" target="_blank" rel="noopener">ecrm.police.go.kr</a></li>
+    </ul>
+  </section>
+
+  <section id="s14">
+    <h2>14. 방침의 변경</h2>
+    <p>이 개인정보 처리방침은 법령 또는 서비스 변경에 따라 수정될 수 있으며, 변경 시 앱 내 공지 또는 본 페이지를 통해 시행 7일 전에 안내합니다. 이용자 권리에 중요한 변경이 있는 경우 30일 전에 안내합니다.</p>
+    <p><strong>공고일자: 2026년 11월 28일 / 시행일자: 2026년 11월 28일</strong></p>
+  </section>
+
+  <footer>© 신병 키우기</footer>
+</main>
 </body>
 </html>
